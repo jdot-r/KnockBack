@@ -18,4 +18,4 @@ KnockBack Power, Config.yml
 
 # NOTICE
 
-This plugin will crash your server if you attack a mob without an Entity Manager type plugin which enables Mobs within your Server!! This includes #Slappers
+This plugin will crash your server if you attack a mob without an Entity Manager type plugin which enables Mobs within your Server!! This includes # Slappers
