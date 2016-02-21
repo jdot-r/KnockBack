@@ -21,6 +21,7 @@ class KnockBack extends PluginBase implements Listener{
 
             public function onDamage(EntityDamageEvent $event){
             $entity = $event->getEntity();
+            $player = $event->getPlayer();
             if($event instanceof EntityDamageByEntityEvent){
           $fizz = new BlazeShootSound($entity);
           $entity->getLevel()->addSound($fizz);
@@ -36,7 +37,7 @@ class KnockBack extends PluginBase implements Listener{
       elseif($entity->getDirection() == 3){
         $entity->knockBack($entity, 0, 0, -1, 1);
       }    
-$entity->sendTIP("§aYou have been launched");
+$player->sendTIP("§aYou have been launched");
     }
 }
 
