@@ -10,12 +10,12 @@ TO-DO:
 KnockBack Power, Config.yml
 
 
-###########################################
-#                                         #                                                                 #                                         #
-#         MAY NOT WORK, IN BETA STAGE!    #                    #                                         #                                                                                                  #                                         #
-###########################################
+########################################
+#                                      #                                                                 #                                      #
+#      MAY NOT WORK, IN BETA STAGE!    #                    #                                      #                                                                                                  #                                      #
+########################################
 
 
 # NOTICE
 
-This plugin will crash your server if you attack a mob without an Entity Manager type plugin which enables Mobs within your Server!! This includes Slappers
+This plugin's code wI'll be used for a upcoming minigame called Sumo-Tori, a ColorMatch Edit!!
