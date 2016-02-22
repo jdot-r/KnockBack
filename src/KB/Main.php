@@ -17,7 +17,7 @@ class KnockBack extends PluginBase implements Listener{
     }
 
     public function onLoad(){
-        $this->getLogger()->info("KnockBack by Skullex enabled :D");
+        $this->getLogger()->info(TextFormat::BOLD."KnockBack by Skullex enabled :D");
     }
 
             public function onDamage(EntityDamageEvent $event){
@@ -43,7 +43,7 @@ $player->sendTIP("You have been launched");
 }
 
     public function onDisable(){
-        $this->getLogger()->info("KnockBack by Skullex disabled D:");
+        $this->getLogger()->info(TextFormat::RED."KnockBack by Skullex disabled D:");
         return true;
     }
 }
