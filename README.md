@@ -11,11 +11,10 @@ KnockBack Power, Config.yml
 
 
 #####################################
-#                                   #                                                                 #                                   #
-#      WILL WORK, IN BETA STAGE!    #                    #                                   #                                                                                                  #                                   #
+#      WILL WORK, IN BETA STAGE!    #                           
 #####################################
 
 
-# NOTICE
+NOTICE
 
 This plugin's code wI'll be used for a upcoming minigame called Sumo-Tori, a ColorMatch Edit!!
