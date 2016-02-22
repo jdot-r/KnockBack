@@ -11,7 +11,7 @@ KnockBack Power, Config.yml
 
 
 #####################################
-#      WILL WORK, IN BETA STAGE!    #                           
+#      WILL WORK, IN BETA STAGE!                       
 #####################################
 
 
