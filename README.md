@@ -17,4 +17,4 @@ KnockBack Power, Config.yml
 
 NOTICE
 
-This plugin's code wI'll be used for a upcoming minigame called Sumo-Tori, a ColorMatch Edit!!
+This plugin's code will be used for a upcoming minigame called Sumo-Tori, a ColorMatch Edit!!
