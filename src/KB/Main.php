@@ -8,6 +8,7 @@ use pocketmine\level\sound\BlazeShootSound;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\Entity;
+use pocketmine\utils\TextFormat;
 
 class KnockBack extends PluginBase implements Listener{
 
@@ -16,7 +17,7 @@ class KnockBack extends PluginBase implements Listener{
     }
 
     public function onLoad(){
-        $this->getLogger()->info("KnockBack by Skullex §aenabled :D");
+        $this->getLogger()->info(TextFormat::BOLD."KnockBack by Skullex enabled :D");
     }
 
             public function onDamage(EntityDamageEvent $event){
@@ -37,12 +38,12 @@ class KnockBack extends PluginBase implements Listener{
       elseif($entity->getDirection() == 3){
         $entity->knockBack($entity, 0, 0, -1, 1);
       }    
-$player->sendTIP("§aYou have been launched");
+$player->sendTIP("You have been launched");
     }
 }
 
     public function onDisable(){
-        $this->getLogger()->info("KnockBack by Skullex §cdisabled D:");
+        $this->getLogger()->info(TextFormat::RED."KnockBack by Skullex disabled D:");
         return true;
     }
 }
