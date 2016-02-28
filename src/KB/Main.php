@@ -38,7 +38,7 @@ class KnockBack extends PluginBase implements Listener{
       elseif($entity->getDirection() == 3){
         $entity->knockBack($entity, 0, 0, -1, 1);
       }    
-$player->sendTIP("You have been launched");
+$event->getPlayer()->sendTIP("You have been launched");
     }
 }
 
