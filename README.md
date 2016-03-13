@@ -1,20 +1,8 @@
-### KnockBack ###############################
-Emits KnockBack on Damage
-### Skullex ##################################
+# KnockBack
 
-This plugins purpose is to privide a bit of fun to PVP. That includes damage by Mobs aswell ;)
+## Choose Language:   
+####  [English](#ENG)   
+####  [中国](#CHINESE_1)  
+####  [クリアースカイ](#CHINESE_2)
+####  [Українська мова](#UKR)  
 
-
-TO-DO:
-
-KnockBack Power, Config.yml
-
-
-#####################################
-#      WILL WORK, IN BETA STAGE!                       
-#####################################
-
-
-NOTICE
-
-This plugin's code will be used for a upcoming minigame called Sumo-Tori, a ColorMatch Edit!!
