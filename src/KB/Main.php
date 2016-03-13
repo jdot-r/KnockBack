@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
         $entity = $event->getEntity();
         $player = $event->getPlayer();
         //Level or Level's in which knockback will be activated! Testing if this will work :P
-        if($player->getLevel($this->getConfig()->get("Level"));
+        if($player->getLevel($this->getConfig()->get("Level")); //Did I do this correctly? :P
         if($event instanceof EntityDamageByEntityEvent){
             $fizz = new BlazeShootSound($entity);
             $entity->getLevel()->addSound($fizz);
