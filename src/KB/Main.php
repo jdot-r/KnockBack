@@ -33,8 +33,7 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onDamage(EntityDamageEvent $event){
-        $entity = $event->getEntity();
-        $player = $event->getPlayer();
+        $entity = $event->getEntity ();
         //Level or Level's in which knockback will be activated! Testing if this will work :P
         if($player->getLevel()->getConfig()->get("Level")); //Did I do this correctly? :P
         if($event instanceof EntityDamageByEntityEvent){
