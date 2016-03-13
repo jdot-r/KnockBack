@@ -27,6 +27,11 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(Color::GREEN ."KnockBack has been successfully loaded!");
     }
     
+    public function onDisable(){
+               $this->getLogger()->info(TextFormat::RED ."KnockBack has been successfully unloaded!");
+               return true;
+    }
+    
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         $player = $event->getPlayer();
@@ -38,10 +43,5 @@ class Main extends PluginBase implements Listener{
             $event->setknockBack($this->getConfig()->get("Power"));
             $event->getPlayer()->sendTip(Color::GREEN ."You have been launched");
         }
-           }
-           }
-           
-           public function onDisable(){
-               $this->getLogger()->info(TextFormat::RED ."KnockBack has been successfully unloaded!");
-               return true;
-           }
+    }
+}
