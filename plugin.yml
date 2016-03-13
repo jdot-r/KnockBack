@@ -1,5 +1,5 @@
 name: KnockBackPower
-main: KB/Main
+main: KB\Main
 version: BETA v2.0.0
 api: [1.12.0, 1.13.0, 1.14.0, 1.0.0, 2.0.0]
 author: Skull3x
