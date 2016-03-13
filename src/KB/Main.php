@@ -1,5 +1,10 @@
 <?php
 
+/*
+* Author: Skull3x
+* Open project
+*/
+
 namespace KB;
 
 use pocketmine\plugin\PluginBase;
@@ -21,7 +26,6 @@ class Main extends PluginBase implements Listener{
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
-        $this->config = new Config($this->getDataFolder."Config.yml", Config::YAML);
     }
     
     public function onLoad(){
@@ -35,13 +39,12 @@ class Main extends PluginBase implements Listener{
     
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
-        //Level or Level's in which knockback will be activated! Testing if this will work :P
         if($event instanceof EntityDamageByEntityEvent){
-            //if($player->getLevel()->getName() == $this->getConfig()->get('world')){
-                if($player->getLevel()->getLevelByName($this->yml["Level_World"])){
+            if($player->getLevel()->getLevelByName($this->yml["Level_World"])){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
                 $event->getEntity()->setknockBack($this->getConfig()->get("Knockback_Power"));
+            }
         }
     }
 }
