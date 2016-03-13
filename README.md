@@ -1,8 +1,3 @@
 # KnockBack
 
-## Choose Language:   
-####  [English](#ENG)   
-####  [中国](#CHINESE_1)  
-####  [クリアースカイ](#CHINESE_2)
-####  [Українська мова](#UKR)  
-
+[![Build Status](https://github.com/Skull3x/KnockBack/releases)](https://github.com/Skull3x/KnockBack/releases "here")
