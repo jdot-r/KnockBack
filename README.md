@@ -1,5 +1,7 @@
 # KnockBack
 
+![psmfist](https://cloud.githubusercontent.com/assets/15986189/13730007/e4324e0c-e918-11e5-8c60-6e3baf944230.jpg)
+
 # English
 This plugin was created by Skull3x, its purpose is to add a little bit more fun to pvp and some sort. The new update v2.0.0 provides a new more clean look of the code itself and less space used. The features of this new update are Configuration capabilities and certian world additions! Download the latest version above as the tab "releases"!
 
