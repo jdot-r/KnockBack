@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
                 if($player->getLevel()->getLevelByName($this->yml["Level_World"])){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
-                $event->setknockBack($this->getConfig()->get("Power"));
+                $event->getEntity()->setknockBack($this->getConfig()->get("Knockback_Power"));
         }
     }
 }
