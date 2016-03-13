@@ -1,9 +1,9 @@
 # KnockBack by Skull3x #
 
-Power: 4.0
+Knockback_Power: 4.0
 # Amount of KnockBack, default is 4.0
 
-Level: world
+Level_World: world
 # Level or level's where knockback will be activated, default is level 'world'
 
 # ThankYou for installing KnockBack <3
