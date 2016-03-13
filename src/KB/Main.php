@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener{
             $fizz = new BlazeShootSound($entity);
             $entity->getLevel()->addSound($fizz);
             $event->setknockBack($this->getConfig()->get("Power"));
-            $event->getPlayer()->sendTip(   Color::GREEN ."You have been launched");
+            $event->getPlayer()->sendTip(Color::GREEN ."You have been launched");
         }
            }
            }
