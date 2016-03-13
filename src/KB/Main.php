@@ -40,7 +40,6 @@ class Main extends PluginBase implements Listener{
         }
            }
            }
-           }
            
            public function onDisable(){
                $this->getLogger()->info(TextFormat::RED ."KnockBack has been successfully unloaded!");
