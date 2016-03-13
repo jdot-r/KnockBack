@@ -21,6 +21,7 @@ class Main extends PluginBase implements Listener{
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
+        $this->config = new Config($this->getDataFolder."Config.yml", Config::YAML);
     }
     
     public function onLoad(){
@@ -33,14 +34,13 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onDamage(EntityDamageEvent $event){
-        $entity = $event->getEntity ();
+        $entity = $event->getEntity();
         //Level or Level's in which knockback will be activated! Testing if this will work :P
-        if($player->getLevel()->getConfig()->get("Level")); //Did I do this correctly? :P
         if($event instanceof EntityDamageByEntityEvent){
-            $fizz = new BlazeShootSound($entity);
-            $entity->getLevel()->addSound($fizz);
-            $event->setknockBack($this->getConfig()->get("Power"));
-            $event->getPlayer()->sendTip(Color::GREEN ."You have been launched");
+            if($player->getLevel()->getName() == $this->getConfig()->get('world')){
+                $fizz = new BlazeShootSound($entity);
+                $entity->getLevel()->addSound($fizz);
+                $event->setknockBack($this->getConfig()->get("Power"));
         }
     }
 }
