@@ -6,5 +6,8 @@ Knockback_Power: 4.0
 Level_World: world
 # Level or level's where knockback will be activated, default is level 'world'
 
+Damage_Level: 5
+# The Amount of damage dealed apon strike
+
 # ThankYou for installing KnockBack <3
 # Github: http://github.com/Skull3x/KnockBack
