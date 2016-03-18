@@ -2,7 +2,7 @@
 
 /*
 * Author: Skull3x
-* Open project
+* Open project to edits in seperate repositories and bug fixes in the current one
 */
 
 namespace KB;
@@ -33,17 +33,18 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onDisable(){
-               $this->getLogger()->info(TextFormat::RED ."KnockBack has been successfully unloaded!");
+               $this->getLogger()->info(Color::RED ."KnockBack has been successfully unloaded!");
                return true;
     }
     
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         if($event instanceof EntityDamageByEntityEvent){
-            if($player->getLevelByName($this->yml["Level_World"])){
+            if($entity->getLevelByName($this->yml["Level_World"])){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
-                $event->getEntity()->setknockBack($this->getConfig()->get("Knockback_Power"));
+                $event->setknockBack($this->yml["Knockback_Power"]);
+                $event->setDamage($this->yml["Damage_Level"]);//$event->getDamage()+10); I would use that but I want it to be up to you xP
             }
         }
     }
