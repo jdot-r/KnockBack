@@ -21,6 +21,8 @@ use pocketmine\Entity;
 
 use pocketmine\utils\TextFormat as Color;
 
+use pocketmine\Level;
+
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
@@ -40,7 +42,7 @@ class Main extends PluginBase implements Listener{
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         if($event instanceof EntityDamageByEntityEvent){
-            if($entity->getLevelByName($this->yml["Level_World"])){
+            if($entity->getLevel()->getLevelByName($this->yml["Level_World"])){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
                 $event->setknockBack($this->yml["Knockback_Power"]);
