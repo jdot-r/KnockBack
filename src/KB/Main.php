@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener{
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
                 $event->setknockBack($this->yml["Knockback_Power"]);
-                $event->setDamage($this->yml["Damage_Level"]);//$event->getDamage()+10); I would use that but I want it to be up to you xP
+                $event->setDamage($this->yml["Damage_Level"]);//$event->setDamage()+10); I would use that but I want it to be up to you xP
             }
         }
     }
