@@ -22,10 +22,11 @@ class Main extends PluginBase implements Listener{
         )))->getAll();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
-    }
-    
-    public function onLoad(){
-        $this->getLogger()->info(Color::GREEN ."has been successfully loaded!");
+        $config = $this->getConfig();
+        $levelname = $config->get("Level_World");
+        $damage = $config->get("Damage_Amount");
+        $knockbackpower= $config->get("Knockback_Power");
+        $this->getLogger()->info(TextFormat::BLUE."[" . TextFormat::RED . "KnockBack" . TextFormat::BLUE . "]" . TextFormat::GREEN . " Created By >> " . TextFormat::RED . "Skullex");
     }
     
     public function onDisable(){
@@ -35,11 +36,11 @@ class Main extends PluginBase implements Listener{
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         if($event instanceof EntityDamageByEntityEvent){
-            if($entity->getLevel()->getLevelByName($this->yml["Level_World"])){
+            if($entity->getLevel()->getLevelByName($levelname){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
-                $event->getEntity()->setknockBack($this->yml["Knockback_Power"]);
-                $event->getEntity()->setDamage($this->yml["Damage_Amount"]);
+                $event->getEntity()->setknockBack($knockbackpower);
+                $event->getEntity()->setDamage($damage);
             }
         }
     }
