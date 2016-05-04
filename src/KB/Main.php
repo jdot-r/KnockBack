@@ -14,16 +14,22 @@ use pocketmine\Level;
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
+        @mkdir($this->getDataFolder());
+        $this->configFile = (new Config($this->getDataFolder()."Config.yml", Config::YAML, array(
+                "Knockback_Power" => "4",
+                "Level_World" => "world",
+                "Damage_Amount" => "5",
+        )))->getAll();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
     }
     
     public function onLoad(){
-        $this->getLogger()->info(Color::GREEN ."KnockBack has been successfully loaded!");
+        $this->getLogger()->info(Color::GREEN ."has been successfully loaded!");
     }
     
     public function onDisable(){
-               $this->getLogger()->info(Color::RED ."KnockBack has been successfully unloaded!");
+               $this->getLogger()->info(Color::RED ."has been successfully unloaded!");
     }
     
     public function onDamage(EntityDamageEvent $event){
@@ -33,7 +39,7 @@ class Main extends PluginBase implements Listener{
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
                 $event->getEntity()->setknockBack($this->yml["Knockback_Power"]);
-                $event->getEntity()->setDamage($this->yml["Damage_Level"]);
+                $event->getEntity()->setDamage($this->yml["Damage_Amount"]);
             }
         }
     }
