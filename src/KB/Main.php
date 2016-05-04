@@ -26,7 +26,7 @@ class Main extends PluginBase implements Listener{
         $levelname = $config->get("Level_World");
         $damage = $config->get("Damage_Amount");
         $knockbackpower= $config->get("Knockback_Power");
-        $this->getLogger()->info(TextFormat::BLUE."[" . TextFormat::RED . "KnockBack" . TextFormat::BLUE . "]" . TextFormat::GREEN . " Created By >> " . TextFormat::RED . "Skullex");
+        $this->getLogger()->info(Color::BLUE."[" . Color::RED . "KnockBack" . Color::BLUE . "]" . Color::GREEN . " Created By >> " . Color::YELLOW . "Skullex");
     }
     
     public function onDisable(){
