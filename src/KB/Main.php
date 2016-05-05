@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener{
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         if($event instanceof EntityDamageByEntityEvent){
-            if($entity->getLevel()->getLevelByName($levelname){
+            if($event->getEntity()->getLevel()->getName($levelname){
                 $fizz = new BlazeShootSound($entity);
                 $entity->getLevel()->addSound($fizz);
                 $event->getEntity()->setknockBack($knockbackpower);
