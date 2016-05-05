@@ -25,7 +25,7 @@ class Main extends PluginBase implements Listener{
         $config = $this->getConfig();
         $levelname = $config->get("Level_World");
         $damage = $config->get("Damage_Amount");
-        $knockbackpower= $config->get("Knockback_Power");
+        $knockbackpower = $config->get("Knockback_Power");
         $this->getLogger()->info(Color::BLUE."[" . Color::RED . "KnockBack" . Color::BLUE . "]" . Color::GREEN . " Created By >> " . Color::YELLOW . "Skullex");
     }
     
