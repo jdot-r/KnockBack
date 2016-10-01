@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
                 $blaze = new \pocketmine\level\sound\BlazeShootSound($entity);
                 $entity->getLevel()->addSound($blaze);
                 $event->getEntity()->setknockBack($knockback);
-                $event->getEntity()->setDamage($damage);
+                $event->setDamage($damage);
             }
         }
     }
