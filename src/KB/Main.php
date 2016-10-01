@@ -4,28 +4,30 @@ namespace KB;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\level\sound\BlazeShootSound;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\Entity;
 use pocketmine\utils\TextFormat as Color;
 use pocketmine\Level;
+use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
         @mkdir($this->getDataFolder());
-        $this->configFile = (new Config($this->getDataFolder()."Config.yml", Config::YAML, array(
-                "Knockback_Power" => "4",
-                "Level_World" => "world",
-                "Damage_Amount" => "5",
-        )))->getAll();
+        if(!file_exists($this->getDataFolder(). "/config.yml")){
+        $config = new Config($this->getDataFolder()."config.yml", Config::YAML, array(
+                "knockback.power" => "4",
+                "level" => "world",
+                "damage" => "5",
+        ))->getAll();
+        }
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $config = $this->getConfig();
-        $levelname = $config->get("Level_World");
-        $damage = $config->get("Damage_Amount");
-        $knockbackpower = $config->get("Knockback_Power");
+        $level = $config->get("level");
+        $damage = $config->get("damage");
+        $knockback = $config->get("knockback.power");
         $this->getLogger()->info(Color::BLUE."[" . Color::RED . "KnockBack" . Color::BLUE . "]" . Color::GREEN . " Created By >> " . Color::YELLOW . "Skullex");
     }
     
@@ -35,12 +37,12 @@ class Main extends PluginBase implements Listener{
     
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
+        $damager = $event->getDamager();
         if($event instanceof EntityDamageByEntityEvent){
-            //if($event->getEntity()->getLevel()->getName($levelname){
-            if($entity->getLevel()->getName() === ($levelname){//$this->getConfig()->get("world")){
-                $fizz = new BlazeShootSound($entity);
-                $entity->getLevel()->addSound($fizz);
-                $event->getEntity()->setknockBack($knockbackpower);
+            if($damager->getLevel()->getName() === ($level){
+                $blaze = new \pocketmine\level\sound\BlazeShootSound($entity);
+                $entity->getLevel()->addSound($blaze);
+                $event->getEntity()->setknockBack($knockback);
                 $event->getEntity()->setDamage($damage);
             }
         }
