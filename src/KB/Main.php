@@ -16,7 +16,7 @@ class Main extends PluginBase implements Listener{
     public function onEnable(){
         @mkdir($this->getDataFolder());
         if(!file_exists($this->getDataFolder(). "/config.yml")){
-        $config = new Config($this->getDataFolder()."config.yml", Config::YAML, array(
+        $config = new Config($this->getDataFolder()."config.yml", Config::JSON, array(
                 "knockback.power" => "4",
                 "level" => "world",
                 "damage" => "5",
@@ -32,19 +32,20 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onDisable(){
-               $this->getLogger()->info(Color::RED ."has been successfully unloaded!");
+        $this->getLogger()->info(Color::RED ."has been successfully unloaded!");
     }
     
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         $damager = $event->getDamager();
         if($event instanceof EntityDamageByEntityEvent){
-            if($damager->getLevel()->getName() === ($level){
+            if($this->getServer()->getLevelByName === ($this->level) && $damager->getLevel()->getName() === ($this->level)){
                 $blaze = new \pocketmine\level\sound\BlazeShootSound($entity);
                 $entity->getLevel()->addSound($blaze);
-                $event->getEntity()->setknockBack($knockback);
-                $event->setDamage($damage);
+                $event->getEntity()->setknockBack($this->knockback);
+                $event->setDamage($this->damage);
             }
         }
     }
 }
+?>
