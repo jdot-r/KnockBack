@@ -14,25 +14,20 @@ use pocketmine\utils\Config;
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
-        if(!file_exists($this->getDataFolder(). "/config.yml")){
-        $config = new Config($this->getDataFolder()."config.yml", Config::JSON, array(
+        if(!(file_exists($this->getDataFolder(). "/config.json"))){
+            $config = new Config($this->getDataFolder()."/config.json", Config::JSON, array(
                 "knockback.power" => "4",
                 "level" => "world",
-                "damage" => "5",
-        ))->getAll();
+                "damage" => "5"));
         }
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $config = $this->getConfig();
         $level = $config->get("level");
         $damage = $config->get("damage");
         $knockback = $config->get("knockback.power");
-        $this->getLogger()->info(Color::BLUE."[" . Color::RED . "KnockBack" . Color::BLUE . "]" . Color::GREEN . " Created By >> " . Color::YELLOW . "Skullex");
-    }
-    
-    public function onDisable(){
-        $this->getLogger()->info(Color::RED ."has been successfully unloaded!");
+        return $config;
     }
     
     public function onDamage(EntityDamageEvent $event){
