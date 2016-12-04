@@ -24,21 +24,22 @@ class Main extends PluginBase implements Listener{
         }
         $this->saveDefaultConfig();
         $config = $this->getConfig();
-        $level = $config->get("level");
-        $damage = $config->get("damage");
-        $knockback = $config->get("knockback.power");
         return $config;
     }
     
     public function onDamage(EntityDamageEvent $event){
         $entity = $event->getEntity();
         $damager = $event->getDamager();
+        $config = $this->getConfig();
+        $level = $config->get("level");
+        $damage = $config->get("damage");
+        $knockback = $config->get("knockback.power");
         if($event instanceof EntityDamageByEntityEvent){
-            if($this->getServer()->getLevelByName === ($this->level) && $damager->getLevel()->getName() === ($this->level)){
+            if($this->getServer()->getLevelByName === ($level) && $damager->getLevel()->getName() === ($level)){
                 $blaze = new \pocketmine\level\sound\BlazeShootSound($entity);
                 $entity->getLevel()->addSound($blaze);
-                $event->getEntity()->setknockBack($this->knockback);
-                $event->setDamage($this->damage);
+                $event->getEntity()->setknockBack($knockback);
+                $event->setDamage($damage);
             }
         }
     }
